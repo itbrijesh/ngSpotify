@@ -10,6 +10,8 @@ import { AppComponent }  from     './app.component';
 import { NavbarComponent } from   './components/navbar/navbar.component';
 import { SearchComponent } from   './components/search/search.component';
 import { AboutComponent } from   './components/about/about.component';
+import { ArtistComponent } from  './components/search/artist.component';
+import { AlbumComponent } from './components/search/album.component';
 
 import * as _ from 'underscore';
 
@@ -17,7 +19,8 @@ import * as _ from 'underscore';
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, 
                   routing ], 
   declarations: [ AppComponent, 
-                  NavbarComponent, SearchComponent, AboutComponent ],
+                  NavbarComponent, SearchComponent, AboutComponent, ArtistComponent,
+                  AlbumComponent ],
   providers:    [ SearchMusicService ],
   exports : [  ],
   schemas: [ ],

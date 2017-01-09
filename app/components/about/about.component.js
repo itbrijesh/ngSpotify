@@ -16,7 +16,7 @@ var AboutComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'about',
-            template: "ABOUT PAGE"
+            template: "\n    <h2>About ngSpotify</h2>\n    <h4>Version 1.0</h4>\n    <p> Developed by Brijesh Prajapati ( Java/J2EE Developer ) using Angular JS 2 final version, Bootstrap CSS and Spotify APIs.</p>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AboutComponent);

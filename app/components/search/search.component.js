@@ -18,17 +18,21 @@ var SearchComponent = (function () {
         this.myForm = this._fb.group({
             searchMusic: ['']
         });
-        this.searchMusic = this.myForm.controls['searchMusic'];
+        //this.searchMusic = this.myForm.controls['searchMusic'];
     }
     SearchComponent.prototype.searchMusicOnSpotify = function () {
-        console.log(' Searching music for >> ' + this.searchMusic.value);
-        this._service.searchMusic(this.searchMusic.value);
+        var _this = this;
+        console.log(' Searching music for >> ' + this.searchMusic);
+        this._service.searchMusic(this.searchMusic).subscribe(function (data) {
+            _this.searchResults = data.artists.items;
+            console.log(_this.searchResults);
+        });
     };
     SearchComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'search',
-            template: "\n        \n            <h1> Need Music?</h1>\n            <p> Use ngSpotify app to browse new releases and find your favorite songs</p>\n            <p> Enter text to search albums.</p>\n\n            <form [formGroup]='myForm'>\n                <input type='input' name='searchMusic' class='form-control' placeHolder='Search your favorite music.'\n                [(ngModel)]='searchMusic' formControlName='searchMusic' (keyup)='searchMusicOnSpotify()' />\n            </form>\n        \n    "
+            templateUrl: 'search.component.html'
         }), 
         __metadata('design:paramtypes', [forms_1.FormBuilder, searchmusic_service_1.SearchMusicService])
     ], SearchComponent);

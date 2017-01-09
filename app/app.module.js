@@ -18,6 +18,8 @@ var app_component_1 = require('./app.component');
 var navbar_component_1 = require('./components/navbar/navbar.component');
 var search_component_1 = require('./components/search/search.component');
 var about_component_1 = require('./components/about/about.component');
+var artist_component_1 = require('./components/search/artist.component');
+var album_component_1 = require('./components/search/album.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,7 +28,8 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule,
                 app_routing_1.routing],
             declarations: [app_component_1.AppComponent,
-                navbar_component_1.NavbarComponent, search_component_1.SearchComponent, about_component_1.AboutComponent],
+                navbar_component_1.NavbarComponent, search_component_1.SearchComponent, about_component_1.AboutComponent, artist_component_1.ArtistComponent,
+                album_component_1.AlbumComponent],
             providers: [searchmusic_service_1.SearchMusicService],
             exports: [],
             schemas: [],

@@ -20,7 +20,22 @@ var SearchMusicService = (function () {
         var url = 'https://api.spotify.com/v1/search?query=' + input +
             '&offset=0&limit=20' +
             '&type=' + type + '&market=US';
-        this._http.get(url).map(function (data) { return data.json(); });
+        console.log('URL >> ' + url);
+        return this._http.get(url).map(function (data) { return data.json(); });
+    };
+    SearchMusicService.prototype.getArtist = function (id) {
+        var url = 'https://api.spotify.com/v1/artists/' + id;
+        return this._http.get(url).map(function (data) { return data.json(); });
+    };
+    SearchMusicService.prototype.getAlbums = function (id) {
+        var url = 'https://api.spotify.com/v1/artists/' + id + '/albums';
+        console.log('Calling getAlbums service...  ' + url);
+        return this._http.get(url).map(function (data) { return data.json().items; });
+    };
+    SearchMusicService.prototype.getAlbum = function (id) {
+        var url = 'https://api.spotify.com/v1/albums/' + id;
+        console.log('Calling getAlbum service api : ' + url);
+        return this._http.get(url).map(function (data) { return data.json(); });
     };
     SearchMusicService = __decorate([
         core_1.Injectable(), 
